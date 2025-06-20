@@ -26,7 +26,7 @@ phases:
     commands:
       - LOGIN_PASSWORD=$(aws ecr get-login-password --region $AWS_DEFAULT_REGION)
       - echo $LOGIN_PASSWORD | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
-      - git clone https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/infra-name infra/
+      - git clone https://github.com/ifrah-ashraf/infra-name.git infra/
   build:
     commands:
       - echo "Building and pushing Docker images"
